@@ -11,22 +11,5 @@ Input: array = [-1, 0, 3, 5, 9, 12], target = 9
 Output: 4
 Explanation: 9 exists in nums and its index is 4
 */
-const search = (reader, target) => {
-  let left = 0
-  let right = 1
-  while (reader.get(right) < target) {
-    left = right
-    right = right * 2
-  }
-  while (left <= right) {
-    mid = Math.floor(left + (right - left) / 2)
-    if (reader.get(mid) === target) return mid
-    if (reader.get(left) <= target && target < reader.get(mid)) {
-      right = mid - 1
-    } else {
-      left = mid + 1
-    }
-  }
-  return -1
-}
+
 console.log(search([-1, 0, 3, 5, 9, 12]))

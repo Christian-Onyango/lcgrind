@@ -9,28 +9,10 @@ Output: [4,9,9,49,121]
 */
 //n long n
 
-const sortSq = (nums) => {
-  return nums.map((elem) => Math.pow(elem, 2)).sort((a, b) => a - b) // T: n long n
-}
+// const sortSq = (nums) => {
+//   return nums.map((elem) => Math.pow(elem, 2)).sort((a, b) => a - b) // T: n long n
+// }
 
 //0(n) and a much better
-const sortSq = (nums) => {
-  const res = []
-  let left = 0
-  let right = nums.length - 1
-  let resIdx = nums.length - 1
-  while (left <= right) {
-    let leftVal = Math.pow(nums[left], 2)
-    let rightVal = Math.pow(nums[right], 2)
-    if (leftVal < rightVal) {
-      res[resIdx] = rightVal
-      right--
-    } else {
-      res[resIdx] = leftVal
-      left++
-    }
-    resIdx--
-  }
-  return res
-}
+
 console.log(sortSq([-7, -3, 2, 3, 11]))

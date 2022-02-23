@@ -9,10 +9,5 @@ Output: 2
 Input: nums [0, 1] 
 Output: 2
 */
-const missNo = (arr) => {
-  const gSum = (arr.length * (arr.length + 1)) / 2
-  const nSum = arr.reduce((acc, el) => acc + el, 0)
 
-  return gSum - nSum
-}
 console.log(missNo([3, 0, 1]))

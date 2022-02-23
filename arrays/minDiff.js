@@ -14,17 +14,5 @@ with difference equal to 1 in asc order
 Input: arr = [1,3,6,10,15]
 Output: [[1,3]]
  */
-const minDiff = (arr) => {
-  arr.sort((a, b) => a - b)
-  const res = []
-  let min = Number.MAX_SAFE_INTEGER
-  for (let i = 0; i < arr.length - 1; i++) {
-    let diff = arr[i + 1] - arr[i]
-    min = Math.min(min, diff)
-    if (min === diff) {
-      res.push([arr[i], arr[i + 1]])
-    }
-  }
-  return res
-}
+
 console.log(minDiff([1, 3, 6, 10, 15]))
