@@ -1,16 +1,23 @@
-var merge = function (intervals) {
-  intervals.sort((a, b) => a[0] - b[0])
-  let result = [intervals[0]]
-  for (let num of intervals) {
-    let e1 = result[result.length - 1][1]
-    let s2 = num[0]
-    let e2 = num[1]
+/* Given an array of strings strs, group the anagrams together. 
+You can return the answer in any order. An anagram is a word or phrase
+formed by rearranging the letters of a different word or phrase, typically
+using all the original letters exactly once. 
 
-    if (e1 >= e2) {
-      result[result.length - 1][1] = Math.max(e1, e2)
+Input: strs=['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
+Output: [['bat'], ['nat', 'tan'], ['ate', 'eat', 'tea']]
+*/
+
+const groupAnag = (str) => {
+  const sortedStr = str.map((word) => word.split("").sort().join(""))
+  const hash = {}
+
+  for (let i = 0; i < str.length; i++) {
+    if (!hash[sortedStr[i]]) {
+      hash[sortedStr[i]] = [str[i]]
     } else {
-      result.push(num)
+      hash[sortedStr[i]].push(str[i])
     }
   }
-  return result
+  return Object.values(hash)
 }
+console.log(groupAnag(["eat", "tea", "tan", "ate", "nat", "bat"]))

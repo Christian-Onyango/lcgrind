@@ -14,5 +14,20 @@ with difference equal to 1 in asc order
 Input: arr = [1,3,6,10,15]
 Output: [[1,3]]
  */
-
-console.log(minDiff([1, 3, 6, 10, 15]))
+const minDiff = (nums) => {
+  nums.sort((a, b) => a - b)
+  let min = Infinity
+  let result = []
+  for (let i = 0; i < nums.length - 1; i++) {
+    let diff = nums[i + 1] - nums[i]
+    min = Math.min(diff, min)
+  }
+  for (let i = 0; i < nums.length - 1; i++) {
+    let diff = nums[i + 1] - nums[i]
+    if (min === diff) {
+      result.push([nums[i], nums[i + 1]])
+    }
+  }
+  return result
+}
+console.log(minDiff([4, 2, 1, 3]))

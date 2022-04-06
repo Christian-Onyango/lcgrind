@@ -27,4 +27,4 @@ const findBuil = (heights) => {
   }
   return result.reverse()
 }
-console.log(findBuil([4, 2, 3, 1]))
+console.log(findBuil([2, 6, 8, 5]))
