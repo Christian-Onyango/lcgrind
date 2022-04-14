@@ -10,4 +10,5 @@ const deleteNode = (node) => {
   node.val = node.next.val
   node.next = next
 }
+
 console.log(deleteNode([4, 5, 1, 9], 1))

@@ -12,22 +12,23 @@ Output: tail connects to node index 1
 Explanation: there is a cycle in the linked list, where tail
 connects to the second node. 
 */
-const detectCycle = (head) => {
-  if (!head.next) return null
+const cycle2 = (head) => {
   if (!head) return null
+  if (!head.next) return null
   let fast = head
   let slow = head
   let pointer = head
-
+  let index = 0
   while (fast && fast.next) {
     fast = fast.next.next
     slow = slow.next
     if (fast === slow) break
   }
   if (fast !== slow) return null
-  while (pointer !== slow) {
+  while (pointer != slow) {
     pointer = pointer.next
     slow = slow.next
+    index++
   }
   return slow
 }

@@ -13,7 +13,7 @@ Input: [1,2,3,4,5,6]
 Output: Node 4 from this list (Serialization: [4,5,6])
 Since the list has two middle nodes with values 3 and 4, we return the second one.
 */
-var middleNode = function (head) {
+const middleNode = (head) => {
   let fast = head
   let slow = head
   while (fast && fast.next) {

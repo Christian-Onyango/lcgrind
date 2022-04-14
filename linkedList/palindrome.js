@@ -4,12 +4,13 @@ output: true
 Input: [1,2] 
 Output: false
 */
-const reverse = (head) => {
+
+const revLi = (head) => {
   let curr = head
   let prev = null
   let next
 
-  while (curr !== null) {
+  while (curr != null) {
     next = curr.next
     curr.next = prev
     prev = curr
@@ -17,7 +18,8 @@ const reverse = (head) => {
   }
   return prev
 }
-const palindrome = (head) => {
+
+const isPali = (head) => {
   let fast = head
   let slow = head
   let startPointer = head
@@ -27,13 +29,14 @@ const palindrome = (head) => {
     slow = slow.next
     length++
   }
-  let mid = reverse(slow)
+  let mid = revLi(slow)
   while (length) {
-    len--
+    length--
     if (mid.val !== startPointer.val) return false
     mid = mid.next
     startPointer = startPointer.next
   }
   return true
 }
-console.log(palindrome([1, 2, 2, 1]))
+
+console.log(isPali([1, 2, 2, 1]))

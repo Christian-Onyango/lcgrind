@@ -12,15 +12,14 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 Input: head = [1,2], pos = 0
 Output: true
 */
-const hasCycle = (head) => {
+var hasCycle = function (head) {
   let fast = head
   let slow = head
+
   while (fast && fast.next) {
     fast = fast.next.next
     slow = slow.next
-    if (fast === slow) {
-      return true
-    }
+    if (fast === slow) return true
   }
   return false
 }

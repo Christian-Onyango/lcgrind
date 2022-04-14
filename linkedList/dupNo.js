@@ -13,7 +13,7 @@ const dupNo = (nums) => {
     slow = nums[slow]
     if (fast === slow) {
       let pointer = 0
-      while (pointer !== slow) {
+      while (pointer != slow) {
         pointer = nums[pointer]
         slow = nums[slow]
       }
@@ -21,4 +21,5 @@ const dupNo = (nums) => {
     }
   }
 }
+
 console.log(dupNo([1, 3, 4, 2, 2]))

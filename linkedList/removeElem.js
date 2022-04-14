@@ -4,15 +4,15 @@ and return the new head.
 Input: head = [1,2,6,3,4,5,6], val  = 6
 Output: [1,2,3,4,5]
 */
-const removeElem = (head, val) => {
+const removeElement = (head, val) => {
   let dummy = new ListNode(-1)
   dummy.next = head
   let prev = dummy
   let curr = head
   while (curr) {
     if (curr.val === val) {
-      prev.next = curr.next
       curr = curr.next
+      prev.next = curr.next
     } else {
       prev = curr
       curr = curr.next
